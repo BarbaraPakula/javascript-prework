@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 30px;
+  font-size: 20px;
   font-family: Calibri;
   color: #3b5998;
   margin-top: 20px;
@@ -69,5 +69,18 @@ button:hover {
 #messages {
   padding-top: 40px;
   width: 100%;
+}
+
+#players {
+  border: 1px dotted #3b5998;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
+}
+
+h6 {
+  font-size: small;
 }
 /*# sourceMappingURL=style.css.map */
