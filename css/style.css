@@ -16,14 +16,11 @@ body {
   margin-top: 10px;
   background-color: #dfe3ee;
   max-width: 650px;
-  height: -webkit-min-content;
-  height: -moz-min-content;
   height: min-content;
   margin: 0 auto;
-  display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   text-align: center;
   padding: 5px;
   border: 5px solid #3b5998;
@@ -73,14 +70,14 @@ button:hover {
 
 #players {
   border: 1px dotted #3b5998;
-  display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   text-align: center;
 }
 
 h6 {
   font-size: small;
 }
+
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,5 @@
 function playGame(playerInput) {
 	clearMessages();
-
 	function getMoveName(argMoveId) {
 		if(argMoveId == 1) {
 			return 'kamień';
@@ -20,7 +19,6 @@ function playGame(playerInput) {
 	let argComputerMove = getMoveName(randomNumber);
 	printMessage('Mój ruch to: ' + argComputerMove);
 	//playerMove
-	// let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 	console.log('Gracz wpisał: ' + playerInput);
 	let argPlayerMove = getMoveName(playerInput);
 	printMessage('Twój ruch to: ' + argPlayerMove);
@@ -31,19 +29,17 @@ function playGame(playerInput) {
 		if(argComputerMove == argPlayerMove) {
 			printMessage('Remis!');
 		} else
-		if(argComputerMove == 'kamień' && argPlayerMove == 'papier') {
+		if((argComputerMove == 'kamień' && argPlayerMove == 'papier') || (argComputerMove == 'papier' && argPlayerMove == 'nożyce') || (argComputerMove == 'nożyce' && argPlayerMove == 'kamień')) {
 			printMessage('Brawo! Ty wygrywasz');
-		} else
-		if(argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
-			printMessage('Brawo! Ty wygrywasz!');
-		} else
-		if(argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
-			printMessage('Brawo! Ty wygrywasz!');
-		} else
-		if(argPlayerMove == 'nieznany ruch') {
-			printMessage('Grasz nieuczciwie. Stawiasz piwo i dam Ci jeszcze szanse');
+			 scoreuser++;
+			 scoreuserDisplay.textContent=scoreuser;
+		// }else
+		// if(argPlayerMove == 'nieznany ruch') {
+		// 	printMessage('Grasz nieuczciwie. Stawiasz piwo i dam Ci jeszcze szanse');
 		} else {
 			printMessage('Przykro mi. Przegrałeś');
+			scorecomputer++;
+			scorecomputerDisplay.textContent=scorecomputer;
 		}
 	}
 	displayResult(argComputerMove, argPlayerMove);
@@ -57,3 +53,8 @@ document.getElementById('play-paper').addEventListener('click', function() {
 document.getElementById('play-scissors').addEventListener('click', function() {
 	playGame(3);
 });
+
+let scoreuserDisplay = document.getElementById('scoreuser');
+	let scorecomputerDisplay = document.getElementById('scorecomputer');
+	let scoreuser = 0;
+	let scorecomputer = 0;
